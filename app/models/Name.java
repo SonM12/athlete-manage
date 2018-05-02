@@ -2,6 +2,11 @@ package models;
 
 import io.ebean.Finder;
 
+/**
+ * Will return a string for a person's full name in the order of first, last or last, first.
+ *
+ * @author Group 4
+ */
 public class Name extends BaseModel{
     public String firstName;
     public String lastName;
