@@ -8,8 +8,8 @@ import io.ebean.Finder;
  * @author Group 4
  */
 public class Name extends BaseModel{
-    public String firstName;
-    public String lastName;
+    public static String firstName;
+    public static String lastName;
 
     /**
      * Creates a person with a specified name.
@@ -23,50 +23,50 @@ public class Name extends BaseModel{
         this.lastName = lastName;
     }
 
-    /**
-     * Creates a student with a specified name.
-     * @param student
-     *          The student's full name
-     */
-    public Name(Student student) {
-        this.firstName = student.firstName;
-        this.lastName = student.lastName;
-    }
-
-    /**
-     * Creates an admin with a specified name.
-     * @param admin
-     *          The admin's full name
-     */
-    public Name(Admin admin) {
-        this.firstName = admin.firstName;
-        this.lastName = admin.lastName;
-    }
-
-    /**
-     * Creates a coach with a specified name.
-     * @param coach
-     *          The coach's full name
-     */
-    public Name(Coach coach) {
-        this.firstName = coach.firstName;
-        this.lastName = coach.lastName;
-    }
+//    /**
+//     * Creates a student with a specified name.
+//     * @param student
+//     *          The student's full name
+//     */
+//    public Name(Student student) {
+//        this.firstName = student.firstName;
+//        this.lastName = student.lastName;
+//    }
+//
+//    /**
+//     * Creates an admin with a specified name.
+//     * @param admin
+//     *          The admin's full name
+//     */
+//    public Name(Admin admin) {
+//        this.firstName = admin.firstName;
+//        this.lastName = admin.lastName;
+//    }
+//
+//    /**
+//     * Creates a coach with a specified name.
+//     * @param coach
+//     *          The coach's full name
+//     */
+//    public Name(Coach coach) {
+//        this.firstName = coach.firstName;
+//        this.lastName = coach.lastName;
+//    }
 
     /**
      * Get the person's full name in the order of first, last.
      * @return A String representing the person's first name and last name.
      */
-    public String getFirstLast() {
-        return firstName + " " + lastName;
+    public String getFirstLast(Student student) {
+        return student.firstName + " " + student.lastName;
     }
 
     /**
      * Get the person's full name in the order of last, first.
      * @return A String representing the person's last name and first name.
      */
-    public String getLastFirst() {
-        return lastName + ", " + firstName;
+    public String getLastFirst(Student student) {
+        return student.lastName + ", " + student.firstName;
     }
 
     public static Finder<Integer, Name> find = new Finder<>(Name.class);
