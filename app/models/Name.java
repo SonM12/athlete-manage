@@ -30,6 +30,7 @@ public class Name extends BaseModel{
         this.firstName = coach.firstName;
         this.lastName = coach.lastName;
     }
+
     public String getFirstLast() {
         return firstName + " " + lastName;
     }
