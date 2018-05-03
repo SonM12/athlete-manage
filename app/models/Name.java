@@ -11,7 +11,7 @@ public class Name extends BaseModel{
     public static String firstName;
     public static String lastName;
 
-    /**
+    /**user.
      * Creates a person with a specified name.
      * @param firstName
      *          The person's first name
@@ -23,52 +23,23 @@ public class Name extends BaseModel{
         this.lastName = lastName;
     }
 
-//    /**
-//     * Creates a student with a specified name.
-//     * @param student
-//     *          The student's full name
-//     */
-//    public Name(Student student) {
-//        this.firstName = student.firstName;
-//        this.lastName = student.lastName;
-//    }
-//
-//    /**
-//     * Creates an admin with a specified name.
-//     * @param admin
-//     *          The admin's full name
-//     */
-//    public Name(Admin admin) {
-//        this.firstName = admin.firstName;
-//        this.lastName = admin.lastName;
-//    }
-//
-//    /**
-//     * Creates a coach with a specified name.
-//     * @param coach
-//     *          The coach's full name
-//     */
-//    public Name(Coach coach) {
-//        this.firstName = coach.firstName;
-//        this.lastName = coach.lastName;
-//    }
+    public static Finder<Integer, Name> find = new Finder<>(Name.class);
+
 
     /**
      * Get the person's full name in the order of first, last.
      * @return A String representing the person's first name and last name.
      */
-    public String getFirstLast(Student student) {
-        return student.firstName + " " + student.lastName;
+    public static String getFirstLast(User user) {
+        return user.firstName + " " + user.lastName;
     }
 
     /**
      * Get the person's full name in the order of last, first.
      * @return A String representing the person's last name and first name.
      */
-    public String getLastFirst(Student student) {
-        return student.lastName + ", " + student.firstName;
+    public static String getLastFirst(User user) {
+        return user.lastName + ", " + user.firstName;
     }
-
-    public static Finder<Integer, Name> find = new Finder<>(Name.class);
 
 }

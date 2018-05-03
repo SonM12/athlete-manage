@@ -1,6 +1,6 @@
 package models;
 
-public class Coach {
+public class User {
     public String firstName;
     public String lastName;
 }
