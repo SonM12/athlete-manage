@@ -25,7 +25,7 @@ public class Name extends BaseModel{
         this.email = email;
     }
 
-    public static Finder<Integer, Name> find = new Finder<>(User.class);
+    public static Finder<Integer, User> find = new Finder<>(User.class);
 
 
     /**
@@ -40,7 +40,7 @@ public class Name extends BaseModel{
      * Get the person's full name in the order of last, first.
      * @return A String representing the person's last name and first name.
      */
-    public static String getLastFirst(User user) {
+    public static String getLastFirst() {
         return lastName + ", " + firstName;
     }
 
