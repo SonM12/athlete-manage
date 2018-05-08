@@ -12,12 +12,14 @@ public class Name extends BaseModel{
     public static String lastName;
     public String email;
 
-    /**user.
+    /**
      * Creates a person with a specified name.
      * @param firstName
      *          The person's first name
      * @param lastName
      *          The person's last name
+     * @param email
+     *          The person's email
      */
     public Name(String firstName, String lastName, String email) {
         this.firstName = firstName;
