@@ -10,6 +10,7 @@ import io.ebean.Finder;
 public class Name extends BaseModel{
     public static String firstName;
     public static String lastName;
+    public String email;
 
     /**user.
      * Creates a person with a specified name.
@@ -18,20 +19,21 @@ public class Name extends BaseModel{
      * @param lastName
      *          The person's last name
      */
-    public Name(String firstName, String lastName) {
+    public Name(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.email = email;
     }
 
-    public static Finder<Integer, Name> find = new Finder<>(Name.class);
+    public static Finder<Integer, Name> find = new Finder<>(User.class);
 
 
     /**
      * Get the person's full name in the order of first, last.
      * @return A String representing the person's first name and last name.
      */
-    public static String getFirstLast(User user) {
-        return user.firstName + " " + user.lastName;
+    public static String getFirstLast() {
+        return firstName + " " + lastName;
     }
 
     /**
@@ -39,7 +41,7 @@ public class Name extends BaseModel{
      * @return A String representing the person's last name and first name.
      */
     public static String getLastFirst(User user) {
-        return user.lastName + ", " + user.firstName;
+        return lastName + ", " + firstName;
     }
 
 }
