@@ -7,7 +7,7 @@ import io.ebean.Finder;
  *
  * @author Group 4
  */
-public class Name extends BaseModel{
+public class User extends BaseModel{
     public static String firstName;
     public static String lastName;
     public String email;
@@ -21,7 +21,7 @@ public class Name extends BaseModel{
      * @param email
      *          The person's email
      */
-    public Name(String firstName, String lastName, String email) {
+    public User(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
